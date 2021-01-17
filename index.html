@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is my first site</h1>
+    <button id="btn">Show time</button>
+    <h2 id="Time"></h2>
+    <script>
+        
+        
+        const btn = document.getElementById("btn");
+        const Time = document.getElementById('Time');
+        function showTime(e) {
+            const date = new Date();
+            let h = date.getHours();
+            let m = date.getMinutes();
+            let s  =  date.getSeconds();
+            Time.innerHTML = h + " : " + m + " : " + s
+            setTimeout(showTime, 1000)
+        }
+
+        btn.addEventListener("click", showTime)
+        
+    </script>
+</body>
+</html>
